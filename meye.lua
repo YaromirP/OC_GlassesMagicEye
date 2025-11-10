@@ -30,7 +30,6 @@ function main()
     local drawSquare = true
     while true do
         if not interruptableSleep(0.05) then -- Если нажали ctrl+c
-            g.removeAll() -- удаляем все, что понарисовали.
             break   -- то выходим из главного цикла и из проги как следствие
         end
         if drawSquare then
@@ -86,3 +85,4 @@ s, e = xpcall(main, function(err) return err .. "\n" .. debug.traceback(); end)
 if not s then
     io.stderr:write(e)
 end
+            g.removeAll() -- удаляем все, что понарисовали.
